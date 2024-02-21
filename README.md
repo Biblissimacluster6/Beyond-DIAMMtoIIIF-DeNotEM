@@ -32,3 +32,14 @@ A Python code (CorpusAI.py) enabling the models to be used on a large number of 
 The current advances being made by Cluster 6 as part of the DeNotEM project are aimed at improving recognition models by focusing on several future objectives. Firstly, we are currently developing post-processing algorithms to correct inaccuracies in recognition models. Some of these algorithms have already been tested and found to be very practical, but further improvements are still needed.
 
 One major objective is to create a super model capable of exploiting a much richer context in terms of information. This will involve cross-tabulating the results of the trained models with other tools, such as Kraken OCR, to take advantage of their respective strengths. Experimental tests have so far proved successful. In addition, we wish to use more powerful YOLO models focusing on finer aspects of musical notation, ranging from the shape of the musical pieces analysed to their genre. In the long term, this system will be capable not only of recognising musical parts, but also of extracting lyrics and voice labels (where appropriate). It will also be able to create connections between different musical sources and distinguish different spellings (such as regional differences), making it easier to date or attribute certain pieces.
+
+## Bibliography and communication
+
+David Fiala and Kevin Roger. 2023. Connecting online early music libraries and musicological resources: Experiments in ergonomics in the Biblissima+ framework. In Proceedings of the 10th International Conference on Digital Libraries for Musicology (DLfM '23). Association for Computing Machinery, New York, NY, USA, 128–131. https://doi.org/10.1145/3625135.3625140
+
+Kévin Roger. « Les modèles IA appliqués aux sources musicales anciennes : Constitution des corpus et premiers pas ». 2es journées du Cluster 6 Biblissima+, Paris, 4 septembre 2023. https://doi.org/10.5281/zenodo.8413599
+
+Kévin Roger. « The French digital infrastructure for written heritage Biblissima+ and the challenges of musical heritage ». MedRen2023, Munich, 26 juillet 2023. https://doi.org/10.5281/zenodo.8414821
+
+Alicia Fornés and Kévin Roger. « Computer Vision Methodologies applied to musical documents ». Novel approaches to Digital Codicology, Tours, 11 mai 2023.
+
