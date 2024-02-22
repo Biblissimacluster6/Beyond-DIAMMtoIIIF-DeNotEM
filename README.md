@@ -37,7 +37,7 @@ One major objective is to create a super model capable of exploiting a much rich
 
 David Fiala and Kevin Roger. 2023. Connecting online early music libraries and musicological resources: Experiments in ergonomics in the Biblissima+ framework. In Proceedings of the 10th International Conference on Digital Libraries for Musicology (DLfM '23). Association for Computing Machinery, New York, NY, USA, 128–131. https://doi.org/10.1145/3625135.3625140
 
-Kévin Roger. « Les modèles IA appliqués aux sources musicales anciennes : Constitution des corpus et premiers pas ». 2es journées du Cluster 6 Biblissima+, Paris, 4 septembre 2023. https://doi.org/10.5281/zenodo.8413599
+Kévin Roger. « Les modèles IA appliqués aux sources musicales anciennes : Constitution des corpus et premiers pas ». 2es journées du Cluster 6 Biblissima+, Paris, 4 octobre 2023. https://doi.org/10.5281/zenodo.8413599
 
 Kévin Roger. « The French digital infrastructure for written heritage Biblissima+ and the challenges of musical heritage ». MedRen2023, Munich, 26 juillet 2023. https://doi.org/10.5281/zenodo.8414821
 
