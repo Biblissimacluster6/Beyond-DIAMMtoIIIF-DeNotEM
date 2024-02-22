@@ -13,7 +13,7 @@ To achieve this, Cluster 6 initially had to collect numerous scans (several hund
 
 ### earlystave.pt
 
-The second model, 'earlystave', improves the detection of musical sections in the case of short musical passages interpolated from text-rich sources. The automatic detection of certain voices can indeed prove problematic in 13th century chansonniers. The example below shows just how difficult it can be to identify a musical part in complex layouts. Earlystave therefore focuses on finer fractions of musical notation, i.e. the staves. It can therefore signal the presence of musical notation in dense corpora and help the voxlabel model to identify a potential voice. 
+The second model, 'earlystave', improves the detection of musical sections in the case of short musical passages interpolated from text-rich sources. The automatic detection of certain voices can indeed prove problematic in 13th century chansonniers. The example below shows just how difficult it can be to identify a musical part in complex layouts. Earlystave therefore focuses on finer fractions of musical notation, i.e. the staves. It can therefore signal the presence of musical notation in dense corpora and help the voxlabel model to identify a potential voice. This model is also based on fragmentary or difficult-to-read sources in order to improve its accuracy. 
 
 ![code](https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/earlystave.jpg)
 
