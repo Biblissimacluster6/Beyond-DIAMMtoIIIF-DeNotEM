@@ -27,7 +27,7 @@ The models were trained using the ImageAI Python library. The first versions are
 
 A Python code (CorpusAI.py) enabling the models to be used on a large number of images and the contents of the boxes detected to be saved in a specific folder is also published above by Cluster 6. It requires the ImageAI library to be installed and needs to be completed with the paths of the files to be analysed and the target directory. Thanks to CorpusAI.py, it is now very easy for any user to run YOLO recognition models, including those published as part of DeNotEM.
 
-## The future of DeNotEM: towards a super model for early music notation
+## The future of DeNotEM: towards a global and powerful recognition system for early music notation
 
 The current advances being made by Cluster 6 as part of the DeNotEM project are aimed at improving recognition models by focusing on several future objectives. Firstly, we are currently developing post-processing algorithms to correct inaccuracies in recognition models. Some of these algorithms have already been tested and found to be very practical, but further improvements are still needed.
 
