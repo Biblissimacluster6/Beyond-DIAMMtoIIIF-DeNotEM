@@ -1,4 +1,7 @@
 # Beyond-DIAMMtoIIIF-DeNotEM
+
+<img src="https://github.com/Biblissimacluster6/DIAMMtoIIIF/blob/main/img/biblissima-baseline-sombre-france2030.png" width="400"><img src="https://github.com/Biblissimacluster6/DIAMMtoIIIF/blob/main/img/Icon.jpg" width="400">
+
 BeyondDIAMMtoIIIF/DeNotEM is a project for the automatic recognition of early musical notation in manuscript sources from the Middle Ages and the Renaissance. 
 
 ## DeNotEM - Detecting Notation in Early Music
