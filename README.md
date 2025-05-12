@@ -38,7 +38,7 @@ We have developed two generations of object detection models targeting musical a
 - **CantusScopeV1-YOLOv8-based model**: Initial robust detector (mAP=0.87)
 - **CantusScopeV2-YOLOv10-based model**: Optimised with better recall and greater versability (mAP=0.87)
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/DeNotEM_architecture.jpg">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Training_Metrics.png">
 
 The diagram illustrates the progressive improvement in the V2 model’s performance of CantusScope over the training epochs. The mean Average Precision at 50% IoU (mAP@50) reaches approximately 0.58, while the stricter mAP@50-95 rises to around 0.42. These metrics demonstrate that the model is increasingly capable of detecting musical zones with both spatial accuracy and consistency across diverse manuscript layouts.
 
