@@ -50,7 +50,14 @@ Two classification models are also available for identifying distinct musical vo
 - **CantusSortV1-YOLOv8** - 7 classification labels: Cantusxiii; Tenorxiii; Supxiv; Infxiv; Supxv; Infxv; Empty (average accuracy = 0.93)
 - **CantusSortV2-YOLOv10** - 8 classification labels: xiiiend_cantus_m; xiiiend_cantus_nm; xiiiend_tenor_m; xiv_inf_m; xiv_sup_m; xv_inf_m; xv_sup_m; empty (average accuracy = 0.97)
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="500">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="400">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/output_metrics_class.png" width="600">
+
+The training curve reveals an efficient and stable learning process for the voice classification model. The Top-1 accuracy steadily increases and stabilizes around 96–97%, while the Top-5 accuracy quickly reaches 100% after only a few epochs. This indicates that the model consistently ranks the correct voice class among its top predictions, reflecting both high precision and low ambiguity.
+
+The training loss shows a sharp decline during the first 10 epochs, then flattens progressively, suggesting rapid initial learning followed by fine-tuning of class boundaries. The validation loss also decreases, albeit with minor fluctuations — likely due to limited sample diversity or class imbalance in the validation set. However, no sign of overfitting is observed, as both loss curves converge harmoniously.
+
+Overall, the model demonstrates excellent generalization capacity and consistent classification performance across the corpus. These results suggest that the voice classifier is ready for deployment in real-world manuscript analysis scenarios and could serve as a robust component in a larger MEI or IIIF annotation workflow.
 
 ## Deprecated parts of the projet
 
@@ -64,7 +71,7 @@ Cluster 6 initially had to collect numerous scans (several hundred) of musical s
 
 The second model, 'earlystave', improves the detection of musical sections in the case of short musical passages interpolated from text-rich sources. The automatic detection of certain voices can indeed prove problematic in 13th century chansonniers. The example below shows just how difficult it can be to identify a musical part in complex layouts. Earlystave therefore focuses on finer fractions of musical notation, i.e. the staves. It can therefore signal the presence of musical notation in dense corpora and help the voxlabel model to identify a potential voice. This model is also based on fragmentary or difficult-to-read sources in order to improve its accuracy. 
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/earlystave.jpg" width="400">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/earlystave.jpg" width="500">
 
 ### Development and use of the models
 
