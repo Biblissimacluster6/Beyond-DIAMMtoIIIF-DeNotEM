@@ -38,7 +38,7 @@ We have developed two generations of object detection models targeting musical a
 - **CantusScopeV1-YOLOv8-based model**: Initial robust detector (mAP=0.87)
 - **CantusScopeV2-YOLOv10-based model**: Optimised with better recall and greater versability (mAP=0.87)
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Training_Metrics.png">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Training_Metrics.png" width="400">
 
 The diagram illustrates the progressive improvement in the V2 model’s performance of CantusScope over the training epochs. The mean Average Precision at 50% IoU (mAP@50) reaches approximately 0.58, while the stricter mAP@50-95 rises to around 0.42. These metrics demonstrate that the model is increasingly capable of detecting musical zones with both spatial accuracy and consistency across diverse manuscript layouts.
 
@@ -53,7 +53,7 @@ Two classification models are also available for identifying distinct musical vo
 - **CantusSortV1-YOLOv8** - 7 classification labels: Cantusxiii; Tenorxiii; Supxiv; Infxiv; Supxv; Infxv; Empty (average accuracy = 0.93)
 - **CantusSortV2-YOLOv10** - 8 classification labels: xiiiend_cantus_m; xiiiend_cantus_nm; xiiiend_tenor_m; xiv_inf_m; xiv_sup_m; xv_inf_m; xv_sup_m; empty (average accuracy = 0.97)
 
-These models are trained to differentiate voice parts based on layout and notation cues (e.g. cantus, tenor, etc.).
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="400">
 
 ## Deprecated parts of the projet
 
@@ -62,8 +62,6 @@ The repository has evolved significantly since its early experimental models. Th
 ### voxlabel.pt (deprecated - YOLOv3)
 
 Cluster 6 initially had to collect numerous scans (several hundred) of musical sources dating from the 13th and 14th centuries. Most of which are held at the BnF. The recovery of these images via the library's IIIF servers largely contributed to the feasibility of the project. Two YOLO detection models were initially developed in response to specific tasks or problems. The first model, 'voxlabel', aims to recognise the type of voice in monophonic and polyphonic pieces, and thus to distinguish between polyphonic and monodic notations. Its learning is based mainly on the layouts and the differences in size and density between the voices. Based on the corpus trained so far, the model has been trained to identify the five voice types most commonly used in the late Middle Ages: cantus, triplum, duplum, contratenor and tenor. 
-
-![code](https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Label%20model.jpg)
 
 ### earlystave.pt (deprecated - YOLOv3)
 
