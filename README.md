@@ -50,7 +50,7 @@ Two classification models are also available for identifying distinct musical vo
 - **CantusSortV1-YOLOv8** - 7 classification labels: Cantusxiii; Tenorxiii; Supxiv; Infxiv; Supxv; Infxv; Empty (average accuracy = 0.93)
 - **CantusSortV2-YOLOv10** - 8 classification labels: xiiiend_cantus_m; xiiiend_cantus_nm; xiiiend_tenor_m; xiv_inf_m; xiv_sup_m; xv_inf_m; xv_sup_m; empty (average accuracy = 0.97)
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="350"><img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/output_metrics_class.png" width="550">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="300"><img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/output_metrics_class.png" width="550">
 
 The training curve reveals an efficient and stable learning process for the voice classification model. The Top-1 accuracy steadily increases and stabilizes around 96–97%, while the Top-5 accuracy quickly reaches 100% after only a few epochs. This indicates that the model consistently ranks the correct voice class among its top predictions, reflecting both high precision and low ambiguity.
 
