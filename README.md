@@ -24,7 +24,7 @@ The DeNotEM project develops and applies tools to automatically detect and analy
 
 All models use the YOLO algorithm. HTR Kraken models are also used in the framework of the project to automatically transcribe text. The architecture is entirely developed in Python.
 
-## DeNotEM data
+## DeNotEM Data
 
 To begin with, Cluster 6 focused on square notation from the 13th to the 15th century (excluding monophonic liturgical music). This was the most widespread notational form in the West at the end of the Middle Ages. To optimize the generalization of the detection models, it is indeed necessary to concentrate on corpora whose notational styles are similar. In total, we identified and retrieved the contents of around thirty manuscripts produced between 1250 and 1500. Over 2,000 images were manually annotated as part of the project, which currently amounts to 7,500 annotations. The images were annotated using LabelIMG, an open-source tool that allows for manual labeling of objects within images. This annotation process enables the generation of bounding boxes stored in XML or YOLO format, which are essential for training computer vision models.
 
@@ -58,6 +58,12 @@ The training loss shows a sharp decline during the first 10 epochs, then flatten
 
 Overall, the model demonstrates excellent generalization capacity and consistent classification performance across the corpus. These results suggest that the voice classifier is ready for deployment in real-world manuscript analysis scenarios and could serve as a robust component in a larger MEI or IIIF annotation workflow.
 
+## DeNotEM Team 
+
+Kévin Roger (leader, developer, annotator) - University of Lorraine
+David Fiala (leader) - University of Tours
+Benjamin Foret (annotator, developer) - University of Lorraine
+
 ## Deprecated parts of the projet
 
 The repository has evolved significantly since its early experimental models. The following models (YOLOv3) are considered deprecated in the framework of DeNotEM, but still functional:
@@ -72,23 +78,19 @@ The second model, 'earlystave', improves the detection of musical sections in th
 
 <img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/earlystave.jpg" width="500">
 
-### Development and use of the models
-
-The YOLO models were trained using several hundred digitisations annotated with the LabelIMG tool. The YOLO (You Only Look Once) algorithm is a computer vision object detection algorithm based on a convolutional neural network. Unlike other approaches that segment the image into regions and then apply a classifier to each region individually, YOLO divides the image into a grid and predicts bounding boxes and object probabilities for each cell in that grid. This allows YOLO to be very fast and efficient, with a shorter inference time than other methods. 
+## The future of DeNotEM: towards a global and powerful recognition system for early music notation
 
 ![code](https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Yolo%20example.jpg)
 
-The models were trained using the ImageAI Python library. The first versions are published in this directory. New versions will be published shortly. The mAP of the first versions is not very high (0.554 for voxlabel; 0.569 for earlystave), but the models already make it possible to process numerous images of musical sources from the 13th and 14th centuries. 
-
-A Python code (CorpusAI.py) enabling the models to be used on a large number of images and the contents of the boxes detected to be saved in a specific folder is also published above by Cluster 6. It requires the ImageAI library to be installed and needs to be completed with the paths of the files to be analysed and the target directory. Thanks to CorpusAI.py, it is now very easy for any user to run YOLO recognition models, including those published as part of DeNotEM.
-
-## The future of DeNotEM: towards a global and powerful recognition system for early music notation
-
 The current advances being made by Cluster 6 as part of the DeNotEM project are aimed at improving recognition models by focusing on several future objectives. Firstly, we are currently developing post-processing algorithms to correct inaccuracies in recognition models. Some of these algorithms have already been tested and found to be very practical, but further improvements are still needed.
 
-One major objective is to create a super model capable of exploiting a much richer context in terms of information. This will involve cross-tabulating the results of the trained models with other tools, such as Kraken OCR, to take advantage of their respective strengths. Experimental tests have so far proved successful. In addition, we wish to use more powerful YOLO models focusing on finer aspects of musical notation, ranging from the shape of the musical pieces analysed to their genre. In the long term, this system will be capable not only of recognising musical parts, but also of extracting lyrics and voice labels (where appropriate). It will also be able to create connections between different musical sources and distinguish different spellings (such as regional differences), making it easier to date or attribute certain pieces.
+One major objective is to create a set of  models capable of exploiting a much richer context in terms of information. This will involve cross-tabulating the results of the trained models with other tools, such as Kraken OCR, to take advantage of their respective strengths. Experimental tests have so far proved successful. In addition, we wish to use more powerful YOLO models focusing on finer aspects of musical notation, ranging from the shape of the musical pieces analysed to their genre. In the long term, this system will be capable not only of recognising musical parts, but also of extracting lyrics and voice labels (where appropriate). It will also be able to create connections between different musical sources and distinguish different spellings (such as regional differences), making it easier to date or attribute certain pieces.
 
 ## Bibliography and communication
+
+Kévin Roger. 2025. « Les musiques anciennes sous le regard de l’IA : les promesses de DeNotEM ». 2e journée d’étude du département de musicologie de Metz, Metz, 07 mai 2025.
+
+Kévin Roger. 2025. « Le numérique et l’intelligence artificielle appliqués aux répertoires musicaux du Moyen Âge occidental ». Séminaire Cenhtor, Nancy, 25 février 2025.
 
 David Fiala and Kevin Roger. 2023. Connecting online early music libraries and musicological resources: Experiments in ergonomics in the Biblissima+ framework. In Proceedings of the 10th International Conference on Digital Libraries for Musicology (DLfM '23). Association for Computing Machinery, New York, NY, USA, 128–131. https://doi.org/10.1145/3625135.3625140
 
