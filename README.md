@@ -20,7 +20,7 @@ The DeNotEM project develops and applies tools to automatically detect and analy
 - IIIF-compatible semantic annotation of source images
 - Creation of a web interface for musicological paleography
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/DeNotEM_architecture.jpg">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/DeNotEM_architecture.jpg" width="400">
 
 All models use the YOLO algorithm. HTR Kraken models are also used in the framework of the project to automatically transcribe text. The architecture is entirely developed in Python.
 
@@ -37,7 +37,7 @@ We have developed two generations of object detection models targeting musical a
 - **CantusScopeV1-YOLOv8-based model**: Initial robust detector (mAP=0.87)
 - **CantusScopeV2-YOLOv10-based model**: Optimised with better recall and greater versability (mAP=0.87)
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Training_Metrics.png" width="600">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Training_Metrics.png" width="550">
 
 The diagram illustrates the progressive improvement in the V2 model’s performance of CantusScope over the training epochs. The mean Average Precision at 50% IoU (mAP@50) reaches approximately 0.58, while the stricter mAP@50-95 rises to around 0.42. These metrics demonstrate that the model is increasingly capable of detecting musical zones with both spatial accuracy and consistency across diverse manuscript layouts. The precision and recall curves also improve steadily throughout training, converging near 0.59 and 0.58 respectively. This balance suggests the model not only avoids false positives but also captures a large proportion of relevant regions, indicating a robust understanding of musical content in complex manuscript images.
 
@@ -50,8 +50,7 @@ Two classification models are also available for identifying distinct musical vo
 - **CantusSortV1-YOLOv8** - 7 classification labels: Cantusxiii; Tenorxiii; Supxiv; Infxiv; Supxv; Infxv; Empty (average accuracy = 0.93)
 - **CantusSortV2-YOLOv10** - 8 classification labels: xiiiend_cantus_m; xiiiend_cantus_nm; xiiiend_tenor_m; xiv_inf_m; xiv_sup_m; xv_inf_m; xv_sup_m; empty (average accuracy = 0.97)
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="400">
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/output_metrics_class.png" width="600">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="400"><img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/output_metrics_class.png" width="550">
 
 The training curve reveals an efficient and stable learning process for the voice classification model. The Top-1 accuracy steadily increases and stabilizes around 96–97%, while the Top-5 accuracy quickly reaches 100% after only a few epochs. This indicates that the model consistently ranks the correct voice class among its top predictions, reflecting both high precision and low ambiguity.
 
