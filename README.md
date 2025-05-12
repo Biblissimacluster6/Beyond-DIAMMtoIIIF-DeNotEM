@@ -8,9 +8,9 @@
 
 ## Overview
 
-BeyondDIAMMtoIIIF/DeNotEM is a project for the automatic recognition of early musical notation in manuscript sources from the Middle Ages and the Renaissance. This project, carried out as part of Biblissima+ Cluster 6, is a continuation of the DIAMMtoIIIF project designed to improve the display and consultation of early musical sources using the IIIF protocol and the resources of the DIAMM (Digital Image Archive of Medieval Music) database. In order to further enrich the IIIF manifests created, Cluster 6 has developed recognition models that will  make it possible to generate annotation files containing the names of musical parts as well as their location and content. Eventually, the tools developed will also serve to provide metadata on the types of notations used, the dating of the sources, layout schemes, and more.
+DeNotEM is a project for the automatic recognition of early musical notation in manuscript sources from the Middle Ages and the Renaissance. This project, carried out as part of Biblissima+ Cluster 6, is a continuation of the DIAMMtoIIIF project designed to improve the display and consultation of early musical sources using the IIIF protocol and the resources of the DIAMM (Digital Image Archive of Medieval Music) database. In order to further enrich the IIIF manifests created, Cluster 6 has developed recognition models that will make it possible to generate annotation files containing the names of musical parts as well as their location and content. Eventually, the tools developed will also serve to provide metadata on the types of notations used, the dating of the sources, layout schemes, and more.
 
-## DeNotEM architecture 
+## DeNotEM Architecture 
 
 The DeNotEM project develops and applies tools to automatically detect and analyse musical notations in digitised medieval and Renaissance manuscripts. It focuses on enabling high-quality digital musicology workflows through:
 
@@ -20,7 +20,7 @@ The DeNotEM project develops and applies tools to automatically detect and analy
 - IIIF-compatible semantic annotation of source images
 - Creation of a web interface for musicological paleography
 
-<img src="https://github.com/Biblissimacluster6/DIAMMtoIIIF/blob/main/img/DeNotEM_architecture.jpg">
+<img src="https://github.com/Biblissimacluster6/DIAMMtoIIIF-DeNotEM/blob/main/img/DeNotEM_architecture.jpg">
 
 
 All models use the YOLO algorithm. HTR Kraken models are also used in the framework of the project to automatically transcribe text. The architecture is entirely developed in Python. 
