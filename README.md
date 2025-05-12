@@ -22,6 +22,7 @@ The DeNotEM project develops and applies tools to automatically detect and analy
 
 <img src="https://github.com/Biblissimacluster6/DIAMMtoIIIF/blob/main/img/DeNotEM_architecture.jpg">
 
+
 All models use the YOLO algorithm. HTR Kraken models are also used in the framework of the project to automatically transcribe text. The architecture is entirely developed in Python. 
 
 ## DeNotEM data
