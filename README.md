@@ -22,12 +22,11 @@ The DeNotEM project develops and applies tools to automatically detect and analy
 
 <img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/DeNotEM_architecture.jpg">
 
-
-All models use the YOLO algorithm. HTR Kraken models are also used in the framework of the project to automatically transcribe text. The architecture is entirely developed in Python. 
+All models use the YOLO algorithm. HTR Kraken models are also used in the framework of the project to automatically transcribe text. The architecture is entirely developed in Python.
 
 ## DeNotEM data
 
-To begin with, Cluster 6 focused on square notation from the 13th to the 15th century (excluding monophonic liturgical music). This was the most widespread notational form in the West at the end of the Middle Ages. To optimize the generalization of the detection models, it is indeed necessary to concentrate on corpora whose notational styles are similar. In total, we identified and retrieved the contents of around thirty manuscripts produced between 1250 and 1500. Over 2,000 images were manually annotated as part of the project, which currently amounts to 7,500 annotations.
+To begin with, Cluster 6 focused on square notation from the 13th to the 15th century (excluding monophonic liturgical music). This was the most widespread notational form in the West at the end of the Middle Ages. To optimize the generalization of the detection models, it is indeed necessary to concentrate on corpora whose notational styles are similar. In total, we identified and retrieved the contents of around thirty manuscripts produced between 1250 and 1500. Over 2,000 images were manually annotated as part of the project, which currently amounts to 7,500 annotations. The images were annotated using LabelIMG, an open-source tool that allows for manual labeling of objects within images. This annotation process enables the generation of bounding boxes stored in XML or YOLO format, which are essential for training computer vision models.
 
 ## Last model versions
 
@@ -38,13 +37,11 @@ We have developed two generations of object detection models targeting musical a
 - **CantusScopeV1-YOLOv8-based model**: Initial robust detector (mAP=0.87)
 - **CantusScopeV2-YOLOv10-based model**: Optimised with better recall and greater versability (mAP=0.87)
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Training_Metrics.png" width="400">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Training_Metrics.png" width="600">
 
-The diagram illustrates the progressive improvement in the V2 model’s performance of CantusScope over the training epochs. The mean Average Precision at 50% IoU (mAP@50) reaches approximately 0.58, while the stricter mAP@50-95 rises to around 0.42. These metrics demonstrate that the model is increasingly capable of detecting musical zones with both spatial accuracy and consistency across diverse manuscript layouts.
+The diagram illustrates the progressive improvement in the V2 model’s performance of CantusScope over the training epochs. The mean Average Precision at 50% IoU (mAP@50) reaches approximately 0.58, while the stricter mAP@50-95 rises to around 0.42. These metrics demonstrate that the model is increasingly capable of detecting musical zones with both spatial accuracy and consistency across diverse manuscript layouts. The precision and recall curves also improve steadily throughout training, converging near 0.59 and 0.58 respectively. This balance suggests the model not only avoids false positives but also captures a large proportion of relevant regions, indicating a robust understanding of musical content in complex manuscript images.
 
-The precision and recall curves also improve steadily throughout training, converging near 0.59 and 0.58 respectively. This balance suggests the model not only avoids false positives but also captures a large proportion of relevant regions, indicating a robust understanding of musical content in complex manuscript images.
-
-The smooth and consistent evolution of all metrics suggests a stable training process without overfitting. It confirms that the dataset is well-structured and that the model generalizes effectively. These results make the current YOLOv10-based detector suitable for downstream tasks such as voice classification, IIIF annotation, or real-time interaction via the Streamlit interface.
+The smooth and consistent evolution of all metrics suggests a stable training process without overfitting. It confirms that the dataset is well-structured and that the model generalizes effectively. These results make the current YOLOv10-based detector suitable for downstream tasks such as voice classification, IIIF annotation, or real-time interaction via a web application.
 
 ### Voice Classification Models CantusSort (YOLOv8 and YOLOv10)
 
@@ -53,21 +50,21 @@ Two classification models are also available for identifying distinct musical vo
 - **CantusSortV1-YOLOv8** - 7 classification labels: Cantusxiii; Tenorxiii; Supxiv; Infxiv; Supxv; Infxv; Empty (average accuracy = 0.93)
 - **CantusSortV2-YOLOv10** - 8 classification labels: xiiiend_cantus_m; xiiiend_cantus_nm; xiiiend_tenor_m; xiv_inf_m; xiv_sup_m; xv_inf_m; xv_sup_m; empty (average accuracy = 0.97)
 
-<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="400">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/val_batch2_pred.jpg" width="500">
 
 ## Deprecated parts of the projet
 
 The repository has evolved significantly since its early experimental models. The following models (YOLOv3) are considered deprecated in the framework of DeNotEM, but still functional:
 
-### voxlabel.pt (deprecated - YOLOv3)
+### voxlabel.pt (deprecated - YOLOv3 - mAP = 0.554)
 
 Cluster 6 initially had to collect numerous scans (several hundred) of musical sources dating from the 13th and 14th centuries. Most of which are held at the BnF. The recovery of these images via the library's IIIF servers largely contributed to the feasibility of the project. Two YOLO detection models were initially developed in response to specific tasks or problems. The first model, 'voxlabel', aims to recognise the type of voice in monophonic and polyphonic pieces, and thus to distinguish between polyphonic and monodic notations. Its learning is based mainly on the layouts and the differences in size and density between the voices. Based on the corpus trained so far, the model has been trained to identify the five voice types most commonly used in the late Middle Ages: cantus, triplum, duplum, contratenor and tenor. 
 
-### earlystave.pt (deprecated - YOLOv3)
+### earlystave.pt (deprecated - YOLOv3 - mAP= 0.569)
 
 The second model, 'earlystave', improves the detection of musical sections in the case of short musical passages interpolated from text-rich sources. The automatic detection of certain voices can indeed prove problematic in 13th century chansonniers. The example below shows just how difficult it can be to identify a musical part in complex layouts. Earlystave therefore focuses on finer fractions of musical notation, i.e. the staves. It can therefore signal the presence of musical notation in dense corpora and help the voxlabel model to identify a potential voice. This model is also based on fragmentary or difficult-to-read sources in order to improve its accuracy. 
 
-![code](https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/earlystave.jpg)
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/earlystave.jpg" width="400">
 
 ### Development and use of the models
 
