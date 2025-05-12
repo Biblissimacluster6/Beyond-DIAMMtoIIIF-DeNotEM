@@ -20,7 +20,7 @@ The DeNotEM project develops and applies tools to automatically detect and analy
 - IIIF-compatible semantic annotation of source images
 - Creation of a web interface for musicological paleography
 
-<img src="https://github.com/Biblissimacluster6/DIAMMtoIIIF-DeNotEM/blob/main/img/DeNotEM_architecture.jpg">
+<img src="https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/DeNotEM_architecture.jpg">
 
 
 All models use the YOLO algorithm. HTR Kraken models are also used in the framework of the project to automatically transcribe text. The architecture is entirely developed in Python. 
