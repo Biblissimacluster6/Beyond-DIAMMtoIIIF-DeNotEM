@@ -1,20 +1,66 @@
-# Beyond-DIAMMtoIIIF-DeNotEM
+# DeNotEM - Detecting Notation in Early Music
 
 <img src="https://github.com/Biblissimacluster6/DIAMMtoIIIF/blob/main/img/biblissima-baseline-sombre-france2030.png" width="300"><img src="https://github.com/Biblissimacluster6/DIAMMtoIIIF/blob/main/img/Icon.jpg" width="300">
 
 "Ce travail a bénéficié́ d'une aide de l’État gérée par l'Agence Nationale de la Recherche au titre du programme d’Investissements d’avenir portant la référence ANR-21-ESRE-0005 (Biblissima+)"
 
-## DeNotEM - Detecting Notation in Early Music
+"This work has received government funding administered by the French National Research Agency under the "Investissements d’avenir" program, reference ANR-21-ESRE-0005 (Biblissima+)."
 
-BeyondDIAMMtoIIIF/DeNotEM is a project for the automatic recognition of early musical notation in manuscript sources from the Middle Ages and the Renaissance. This project, carried out as part of Biblissima+ Cluster 6, is a continuation of the DIAMMtoIIIF project designed to improve the display and consultation of early musical sources using the IIIF protocol and the resources of the DIAMM (Digital Image Archive of Medieval Music) database. In order to further enrich the IIIF manifests created, Cluster 6 has developed recognition models that will eventually make it possible to generate annotation files containing the names of musical parts as well as their location and content. This project focuses on the square notations (measured or not) of late medieval music (except plainchant). 
+## Overview
 
-### voxlabel.pt
+BeyondDIAMMtoIIIF/DeNotEM is a project for the automatic recognition of early musical notation in manuscript sources from the Middle Ages and the Renaissance. This project, carried out as part of Biblissima+ Cluster 6, is a continuation of the DIAMMtoIIIF project designed to improve the display and consultation of early musical sources using the IIIF protocol and the resources of the DIAMM (Digital Image Archive of Medieval Music) database. In order to further enrich the IIIF manifests created, Cluster 6 has developed recognition models that will  make it possible to generate annotation files containing the names of musical parts as well as their location and content. Eventually, the tools developed will also serve to provide metadata on the types of notations used, the dating of the sources, layout schemes, and more.
 
-To achieve this, Cluster 6 initially had to collect numerous scans (several hundred) of musical sources dating from the 13th and 14th centuries. Most of which are held at the BnF. The recovery of these images via the library's IIIF servers largely contributed to the feasibility of the project. Two YOLO detection models were initially developed in response to specific tasks or problems. The first model, 'voxlabel', aims to recognise the type of voice in monophonic and polyphonic pieces, and thus to distinguish between polyphonic and monodic notations. Its learning is based mainly on the layouts and the differences in size and density between the voices. Based on the corpus trained so far, the model has been trained to identify the five voice types most commonly used in the late Middle Ages: cantus, triplum, duplum, contratenor and tenor. 
+## DeNotEM architecture 
+
+The DeNotEM project develops and applies tools to automatically detect and analyse musical notations in digitised medieval and Renaissance manuscripts. It focuses on enabling high-quality digital musicology workflows through:
+
+- Deep learning-based detection of musical parts
+- Classification of polyphonic and monophonic musical parts
+- Various metadata inferences about the nature of sources, annotations, dating, etc.
+- IIIF-compatible semantic annotation of source images
+- Creation of a web interface for musicological paleography
+
+All models use the YOLO algorithm. HTR Kraken models are also used in the framework of the project to automatically transcribe text. The architecture is entirely developed in Python. 
+
+## DeNotEM data
+
+To begin with, Cluster 6 focused on square notation from the 13th to the 15th century (excluding monophonic liturgical music). This was the most widespread notational form in the West at the end of the Middle Ages. To optimize the generalization of the detection models, it is indeed necessary to concentrate on corpora whose notational styles are similar. In total, we identified and retrieved the contents of around thirty manuscripts produced between 1250 and 1500. Over 2,000 images were manually annotated as part of the project, which currently amounts to 7,500 annotations.
+
+## Last model versions
+
+### Detection Models CantusScope (YOLOv8 and YOLOv10)
+
+We have developed two generations of object detection models targeting musical areas in medieval manuscripts (out of notation in score), from 1250 to 1500:
+
+- **CantusScopeV1-YOLOv8-based model**: Initial robust detector (mAP=0.87)
+- **CantusScopeV2-YOLOv10-based model**: Optimised with better recall and greater versability (mAP=0.87)
+
+The diagram illustrates the progressive improvement in the V2 model’s performance of CantusScope over the training epochs. The mean Average Precision at 50% IoU (mAP@50) reaches approximately 0.58, while the stricter mAP@50-95 rises to around 0.42. These metrics demonstrate that the model is increasingly capable of detecting musical zones with both spatial accuracy and consistency across diverse manuscript layouts.
+
+The precision and recall curves also improve steadily throughout training, converging near 0.59 and 0.58 respectively. This balance suggests the model not only avoids false positives but also captures a large proportion of relevant regions, indicating a robust understanding of musical content in complex manuscript images.
+
+The smooth and consistent evolution of all metrics suggests a stable training process without overfitting. It confirms that the dataset is well-structured and that the model generalizes effectively. These results make the current YOLOv10-based detector suitable for downstream tasks such as voice classification, IIIF annotation, or real-time interaction via the Streamlit interface.
+
+### Voice Classification Models CantusSort (YOLOv8 and YOLOv10)
+
+Two classification models are also available for identifying distinct musical voices in monodic and polyphonic contexts:
+
+- **CantusSortV1-YOLOv8** - 7 classification labels: Cantusxiii; Tenorxiii; Supxiv; Infxiv; Supxv; Infxv; Empty (average accuracy = 0.93)
+- **CantusSortV2-YOLOv10** - 8 classification labels: xiiiend_cantus_m; xiiiend_cantus_nm; xiiiend_tenor_m; xiv_inf_m; xiv_sup_m; xv_inf_m; xv_sup_m; empty (average accuracy = 0.97)
+
+These models are trained to differentiate voice parts based on layout and notation cues (e.g. cantus, tenor, etc.).
+
+## Deprecated parts of the projet
+
+The repository has evolved significantly since its early experimental models. The following models (YOLOv3) are considered deprecated in the framework of DeNotEM, but still functional:
+
+### voxlabel.pt (deprecated - YOLOv3)
+
+Cluster 6 initially had to collect numerous scans (several hundred) of musical sources dating from the 13th and 14th centuries. Most of which are held at the BnF. The recovery of these images via the library's IIIF servers largely contributed to the feasibility of the project. Two YOLO detection models were initially developed in response to specific tasks or problems. The first model, 'voxlabel', aims to recognise the type of voice in monophonic and polyphonic pieces, and thus to distinguish between polyphonic and monodic notations. Its learning is based mainly on the layouts and the differences in size and density between the voices. Based on the corpus trained so far, the model has been trained to identify the five voice types most commonly used in the late Middle Ages: cantus, triplum, duplum, contratenor and tenor. 
 
 ![code](https://github.com/Biblissimacluster6/Beyond-DIAMMtoIIIF-DeNotEM/blob/main/img/Label%20model.jpg)
 
-### earlystave.pt
+### earlystave.pt (deprecated - YOLOv3)
 
 The second model, 'earlystave', improves the detection of musical sections in the case of short musical passages interpolated from text-rich sources. The automatic detection of certain voices can indeed prove problematic in 13th century chansonniers. The example below shows just how difficult it can be to identify a musical part in complex layouts. Earlystave therefore focuses on finer fractions of musical notation, i.e. the staves. It can therefore signal the presence of musical notation in dense corpora and help the voxlabel model to identify a potential voice. This model is also based on fragmentary or difficult-to-read sources in order to improve its accuracy. 
 
