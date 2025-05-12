@@ -60,9 +60,9 @@ Overall, the model demonstrates excellent generalization capacity and consistent
 
 ## DeNotEM Team 
 
-Kévin Roger (leader, developer, annotator) - University of Lorraine
-David Fiala (leader) - University of Tours
-Benjamin Foret (annotator, developer) - University of Lorraine
+- Kévin Roger (leader, developer, annotator) - University of Lorraine
+- David Fiala (leader) - University of Tours
+- Benjamin Foret (annotator, developer) - University of Lorraine
 
 ## Deprecated parts of the projet
 
